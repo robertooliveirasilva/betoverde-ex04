@@ -1,35 +1,30 @@
-# VerdeVivo — ONG Ambiental (Demo)
+# Beto Verde - EX04
 
-Projeto exemplo para entrega acadêmica (EX02 / EX03 / EX04).
+Oi! Esse é o meu site da ONG Beto Verde, entrega final.
 
-## Resumo
-Site demo com:
-- Grid responsivo 12-col e 5 breakpoints (mobile-first)
-- Navegação com submenu dropdown e menu hambúrguer (acessível)
-- Cards, badges, botões, formulário com validação e armazenamento local
-- SPA simples (hash routing) e templates JS
-- Modais, toasts e foco acessível
-- Preparado para versionamento GitFlow e deploy
+**Link do site funcionando:**  
+[https://robertooliveirasilva.github.io/betoverde-ex04/](https://robertooliveirasilva.github.io/betoverde-ex04/)
 
-## Como usar (local)
-1. Clone seu repositório ou faça upload dos arquivos.
-2. Abra `index.html` no navegador (ou use `live-server` para rotas hash).
-3. Para produção, copie os arquivos para GitHub Pages (branch `main`) ou outro host.
+---
 
-## Branching (sugestão)
-- `main`, `develop`, `feature/*`, `release/*`, `hotfix/*`
-- Commits usando Conventional Commits: `feat`, `fix`, `chore`, etc.
+## O que tem no site?
 
-## Acessibilidade
-- Uso de roles ARIA e navegação por teclado.
-- Skip link para conteúdo principal.
-- Modais com `aria-modal` e foco preso.
+- Menu com 3 risquinhos no celular (abre e fecha)
+- Botão pra trocar de **Claro** pra **Escuro**
+- Formulário pra ser voluntário (valida nome, e-mail, placa)
+- Botão "voltar ao topo" quando rola a página
+- Funciona no celular, tablet e PC
+- Dá pra instalar no celular (tipo app)
 
-## Estrutura de arquivos
-- `index.html`
-- `src/css/main.css`
-- `src/js/app.js`
+---
 
-## Observações para entrega
-- Complete o README com imagens, screenshots e relatório de acessibilidade.
-- Configure minificação e pipeline de build se necessário (ex.: npm scripts).
+## Coisas que aprendi e usei
+
+- HTML, CSS e JavaScript
+- Menu responsivo
+- Dark mode com botão
+- Formulário que não deixa errar
+- Site rápido (arquivos pequenos)
+- Acessibilidade (pra quem usa leitor de tela)
+- GitFlow (main, develop, features)
+- GitHub Pages (pra deixar online)
