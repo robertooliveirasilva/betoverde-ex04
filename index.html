@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Beto Verde - ONG ambiental dedicada ao reflorestamento, educação e limpeza de rios." />
+  <title>Beto Verde - ONG Ambiental</title>
+  <link rel="stylesheet" href="./src/css/main.css" />
+  <link rel="stylesheet" href="./src/css/grid.css" />
+  <link rel="stylesheet" href="./src/css/components.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <header class="site-header" role="banner">
+    <div class="container nav-inner">
+      <a class="brand" href="#/" aria-label="Beto Verde - Início">
+        <img src="./src/assets/images/logo.jpg" alt="Logo Beto Verde" width="120">
+      </a>
+
+      <button id="btn-burger" class="burger" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menu">
+        <span class="burger-box">
+          <span class="burger-inner"></span>
+        </span>
+      </button>
+
+      <nav id="nav-menu" class="nav-menu" role="navigation" aria-label="Menu principal">
+        <ul role="menubar">
+          <li role="none"><a role="menuitem" href="#/">Início</a></li>
+          <li role="none"><a role="menuitem" href="#/sobre">Sobre</a></li>
+          <li role="none"><a role="menuitem" href="#/projetos">Projetos</a></li>
+          <li role="none"><a role="menuitem" href="#/voluntario">Seja Voluntário</a></li>
+          <li role="none"><a role="menuitem" href="#/contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container" role="main">
+    <div id="app" tabindex="-1"></div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© <span id="current-year"></span> Beto Verde - ONG Ambiental</p>
+      <p class="footer-tagline">Com Beto, a natureza tem voz.</p>
+    </div>
+  </footer>
+
+  <!-- Templates -->
+  <script type="text/template" id="tpl-home">
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Com Beto, a natureza <span class="highlight">respira</span></h1>
+        <p>Reflorestamento, educação ambiental e limpeza de rios com impacto real.</p>
+        <a href="#/voluntario" class="btn btn-primary">Quero ajudar</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Nossos Projetos</h2>
+      <div class="grid grid--projects" id="projects-grid"></div>
+    </section>
+  </script>
+
+  <script type="text/template" id="tpl-projeto">
+    <article class="project-detail">
+      <h1 class="project-title">{{title}}</h1>
+      <img src="{{img}}" alt="{{title}}" class="project-img" loading="lazy">
+      <div class="project-content">
+        <p>{{body}}</p>
+        <div class="project-actions">
+          <button class="btn btn-primary" data-open-modal="donate-modal">Quero doar</button>
+          <a href="#/voluntario" class="btn btn-outline">Ser voluntário</a>
+        </div>
+      </div>
+    </article>
+  </script>
+
+  <script type="text/template" id="tpl-voluntario">
+    <section class="section volunteer-section">
+      <h2>Seja Voluntário com Beto</h2>
+      <p class="lead">Faça parte da mudança. Sua ação faz a diferença.</p>
+      <form id="volunteer-form" class="form-volunteer" novalidate>
+        <div class="form-group">
+          <label for="name">Nome completo *</label>
+          <input id="name" name="name" type="text" required minlength="2" />
+          <div class="field-msg" aria-live="polite"></div>
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail *</label>
+          <input id="email" name="email" type="email" required />
+          <div class="field-msg" aria-live="polite"></div>
+        </div>
+        <div class="form-group checkbox">
+          <label><input type="checkbox" name="hasCar" id="hasCar"> Tenho carro disponível</label>
+        </div>
+        <div class="form-group" id="plate-group" style="display:none;">
+          <label for="plate">Placa do veículo</p>
+          <input1nput id="plate" name="plate" type="text" placeholder="ABC-1234" />
+          <div class="field-msg" aria-live="polite"></div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg">Enviar cadastro</button>
+      </form>
+    </section>
+  </script>
+
+  <script type="text/template" id="tpl-contato">
+    <section class="section contact-section">
+      <h2 class="section-title">Fale com Beto</h2>
+      <div class="contact-content">
+        <div class="contact-info">
+          <p>Entre em contato com nosso fundador:</p>
+          <p class="contact-phone"><strong>Telefone:</strong> 11 98048-4344</p>
+          <p><a href="mailto:contato@betoverde.org" class="btn btn-outline">Enviar e-mail</a></p>
+        </div>
+        <div class="contact-card">
+          <img src="./src/assets/images/beto.jpg" alt="Roberto Oliveira" class="contact-avatar">
+          <h3>Beto</h3>
+          <p>Fundador & Coordenador</p>
+        </div>
+      </div>
+    </section>
+  </script>
+
+  <!-- Modal -->
+  <div id="donate-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" tabindex="-1">
+    <div class="modal-content" role="document">
+      <button class="modal-close" aria-label="Fechar">×</button>
+      <h3>Contribua com o projeto</h3>
+      <p>Ajude com doações ou voluntariado local.</p>
+      <div class="modal-actions">
+        <button class="btn btn-primary modal-confirm">Quero doar</button>
+        <a href="#/voluntario" class="btn btn-outline">Ser voluntário</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast-area" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="./src/js/router.js"></script>
+  <script src="./src/js/app.js"></script>
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
